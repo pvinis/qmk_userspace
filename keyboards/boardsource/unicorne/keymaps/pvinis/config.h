@@ -3,7 +3,7 @@
 
 #ifdef PRODUCT
   #undef PRODUCT
-  #define PRODUCT "Boardsource Unicorne Keyboard - pvinis"
+  #define PRODUCT "Unicorne - pvinis"
 #endif
 
 #ifdef AUDIO_ENABLE
