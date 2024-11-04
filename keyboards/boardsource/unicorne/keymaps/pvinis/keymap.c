@@ -62,22 +62,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 float scroll_accumulated_h = 0;
 float scroll_accumulated_v = 0;
 
-report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, report_mouse_t right_report) {
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     // Calculate and accumulate scroll values based on mouse movement and divisors
-    scroll_accumulated_h += (float)left_report.x / 24.0;
-    scroll_accumulated_v += (float)left_report.y / 24.0;
+    scroll_accumulated_h += (float)mouse_report.x / 32.0;
+    scroll_accumulated_v -= (float)mouse_report.y / 32.0;
 
     // Assign integer parts of accumulated scroll values to the mouse report
-    left_report.h = (int8_t)scroll_accumulated_h;
-    left_report.v = (int8_t)scroll_accumulated_v;
+    mouse_report.h = (int8_t)scroll_accumulated_h;
+    mouse_report.v = (int8_t)scroll_accumulated_v;
 
     // Update accumulated scroll values by subtracting the integer parts
     scroll_accumulated_h -= (int8_t)scroll_accumulated_h;
     scroll_accumulated_v -= (int8_t)scroll_accumulated_v;
 
     // Clear the X and Y values of the mouse report
-    left_report.x = 0;
-    left_report.y = 0;
+    mouse_report.x = 0;
+    mouse_report.y = 0;
 
-    return pointing_device_combine_reports(left_report, right_report);
+    return mouse_report;
 }
