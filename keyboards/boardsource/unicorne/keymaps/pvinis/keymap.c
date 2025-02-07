@@ -4,9 +4,8 @@
 
 #include "pvinis.h"
 
-// #include "version.h"
-// #include "lib/oled.h"
-
+#include "version.h"
+#include "lib/oled.h"
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
