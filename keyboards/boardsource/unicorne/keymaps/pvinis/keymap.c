@@ -11,7 +11,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LR_QWERTY] = LAYOUT_split_3x6_3_wrapper(
-        PV_TAB_NUM, _________________QWERTY_L1_________________,    _________________QWERTY_R1_________________, _EMPTY_,
+        PV_TAB_NUM, _________________QWERTY_L1_________________,    _________________QWERTY_R1_________________, KC_F12 ,
         PV_ESCC   , _________________QWERTY_L2_________________,    _________________QWERTY_R2_________________, KC_ENT ,
         KC_LSFT   , _________________QWERTY_L3_________________,    _________________QWERTY_R3_________________, KC_RSFT,
                                       KC_LGUI, SYMBOL , KC_BSPC,    KC_SPC , SYSCTL , KC_HYPR
