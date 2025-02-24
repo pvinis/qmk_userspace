@@ -128,7 +128,5 @@ enum Layers {
 
 
 
-//// use system control for change lang
-
 /// game/regular mode
 /// isaac mode
